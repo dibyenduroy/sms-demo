@@ -3,26 +3,29 @@
 const RC = require('ringcentral')
 const dotenv = require('dotenv')
 
-var RINGCENTRAL_RECEIVER='+14083388064';
-//var RINGCENTRAL_USERNAME='+18883303674';
-var RINGCENTRAL_USERNAME='+16504377133';
-var phone_array = ['+14083388064','+14088543617']
+var RINGCENTRAL_RECEIVER='+1XXXXXXXXXXX';
+//var RINGCENTRAL_USERNAME='+1XXXXXX';
+var RINGCENTRAL_USERNAME='+1XXXXXXXX';
+
+//Array of To Numbers
+
+var phone_array = ['+1XXXXXXX','+1XXXXXXXXXX']
 
 //'+15072087802','+919831091527'
 
 var rcsdk = new RC({
     server: 'https://platform.ringcentral.com',
-    appKey: 'PecY7xaOSaSUGkALifVcWQ',
-    appSecret: '2tyIzCYSR4y4NH6fZQHb9A4YQqGPhaTzqjS7-wVbGwng'
+    appKey: 'XXXXXXXXXX',
+    appSecret: 'XXXXXXXXXXXXXXXXXXXXXX'
 });
 
 console.log("The Server name is "+ rcsdk.server);
 
 const platform = rcsdk.platform()
 platform.login({
-  username: '+18883303674',
+  username: '+1XXXXXXXX',
   extension: '101',
-  password: 'Test@987'
+  password: 'XXXXXXXX'
 }).then(response => {
     for (i in phone_array ) {
   platform.post('/account/~/extension/~/sms', {
